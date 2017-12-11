@@ -1,0 +1,853 @@
+/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+@font-face {
+    font-family: fontPrimary;
+    src: url(./Avenir-Book.ttf);
+}
+
+
+body {
+	font-family:fontPrimary;
+}
+
+
+.main-bg {
+    background: url(../img/fondo.png)    repeat fixed;
+    width:100%;
+    background-size:100%;
+    height: 429px;
+    font-weight:lighter;
+    overflow:none;
+    position:relative;
+}
+
+.bar {
+	background:#1A0A14;
+	height:35px;
+}
+
+.logo-main {
+	color:white;
+	font-size:12pt;
+	z-index:101;
+	position:absolute;
+	top:20px;
+	left:12px;
+}
+
+.logo-main span {
+	margin-left:20px;
+	
+}
+
+.search-main {
+    	position:absolute;
+	right:12px;
+	top:20px;
+	background:url(../img/BT-BUSCAR.png) ;
+	background-size:100%;
+	width:42.5px;
+	z-index:100;
+	height:39px;
+	display:none;
+	
+}
+
+.slider {
+	position:relative;
+	width:100%;
+	height:469px;
+}
+
+/*------------------------------------*\
+    CONTENEDOR SLIDER
+\*------------------------------------*/
+
+.ContenedorSlider{
+    width: 100%;
+    height: 410px;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+.BloqueCarrousel{
+    width: 20% !important;
+    height: auto;
+}
+
+
+.btn_left{
+    width: 53px;
+    height: 53px;
+    background: url("../img/FLECHA-A-INA.png");
+    background-size: 53px 53px;
+    position: absolute;
+    top: 207px;
+    left: 10px;
+    z-index: 999;
+    opacity: .5;
+}
+
+
+.btn_right{
+    width: 53px;
+    height: 53px;
+    background: url("../img/FLECHA-B-INA.png");
+    background-size: 53px 53px;
+    position: absolute;
+    top: 207px;
+    right: 10px;
+    z-index: 999;
+    opacity: .5;
+}
+
+.item {
+    background:red;
+    min-width:231.5px;
+    min-height:331.5px;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#canvas_slider {
+	margin-top:27px;
+}
+
+.clear {
+	clear:both;
+}	
+
+
+
+.PopupSlider1{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background:transparent;
+    z-index: 999;
+    display: none;
+}
+
+
+.PopupLibroTexto{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background:#E6E6E6;
+    z-index: 999;
+    display: none;
+}
+
+
+.PopupLibroTexto > .back{
+    width: 1024px;
+    height: 80px;
+    background: url("../img/BACK.png");
+    background-size: 1024px 80px;
+}
+
+
+
+.PopupLibroTexto > .left{
+    width: 32px;
+    height: 32px;
+    background: url("../img/FLECHA-A-INA.png");
+    background-size: 32px 32px;
+    position: absolute;
+    left: 10px;
+    top: 45%;
+
+}
+
+
+.PopupLibroTexto > .right{
+    width: 32px;
+    height: 32px;
+    background: url("../img/FLECHA-B-INA.png");
+    background-size: 32px 32px;
+    position: absolute;
+    right:  10px;
+    top: 45%;
+
+
+}
+
+.PopupLibroTexto >  .BloqueTexto{
+    width: 90%;
+    height: 800px;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+.PopupLibroTexto >  .BloqueTexto > .BloqueA {
+    width: 48%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 0px;
+    float: left;
+}
+
+
+.PopupLibroTexto >  .BloqueTexto > .BloqueB {
+    width: 48%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 0px;
+    float: right;
+}
+
+
+.popupLibro  {
+    width: 489px;
+    height: 360px;
+    background-size: 489px 360px;
+    position: absolute;
+    left: 50%;
+    top: 261px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+
+
+/*------------------------------------*\
+    BLOQUE MENUS
+\*------------------------------------*/
+
+
+.BloqueBottom{
+    width: 100%;
+    background: #FFF;
+    overflow: hidden;
+}
+
+.BloqueBottom > .submenu{
+    width: 35%;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.BloqueBottom > .submenu > .items{
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    float: left;
+    text-align: center;
+    background: #FFF;
+    border: 1px solid #FFF;
+    border-radius: 25px;
+    cursor: pointer;
+
+    -webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+
+}
+
+.BloqueBottom > .submenu > .items:hover{
+ background: #F0303B;
+ -webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+}
+
+
+
+.itemsCurrent{
+ background: #F0303B !important;
+ -webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+color:white;
+}
+
+
+
+.BloqueLibros{
+    height:260px;
+    white-space:nowrap;
+    overflow:hidden;
+    overflow-x:scroll;
+    
+}
+
+
+.itemsLibros{
+    width: 150px;
+    height: 160px;
+    background-color: #FFF;
+    vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
+    display:inline-block;
+    overflow:hidden;
+
+}
+
+.itemsLibros > .imgPortada{
+    height: auto;
+    width:70%;
+    margin: 0 auto;
+}
+
+
+.itemsLibros > .imgPortada img{
+    width: 100%;
+    height: auto;
+}
+
+.BloqueLibros_1{
+    
+}
+
+
+.BloqueLibros_2{
+    display: none;
+}
+
+.BloqueLibros_3{
+    display: none;
+}
+
+
+
+.shadow-left {
+    position:absolute;
+    height:100%;
+    left:0px;
+    top:0px;
+    width:219px;
+    background:url(../img/sombra-izq.png) 100% ;
+    z-index:1;
+
+}
+
+.shadow-right {
+    position:absolute;
+    height:100%;
+    right:0px;
+    top:0px;
+    width:219px;
+    background:url(../img/sombra-der.png) ;
+    z-index:1;
+
+}
+
+.bar-window {
+	position:fixed;
+	bottom:10px;
+	left:10px;
+	width:85%;
+}
+
+.label-bar {
+    max-width:120px;
+    line-height:12px;
+    font-size:10px;
+}
+
+
+.bar-percent {
+	background:#EB3F4D;
+	height:100%;
+	width:50%;
+	margin-left:-20px;
+}
+
+.button-bar {
+    cursor: pointer;
+    float: left;
+    height: 34px;
+    width: 30px;
+    float: left;
+    line-height: -7px;
+    vertical-align: middle;
+    margin-top: -11px;
+    margin-left: 10px;
+}
+
+.button-bar img {
+	cursor:pointer;
+}
+
+.alouri-bar {
+    background:#a9a9a9;
+    height:10px;
+    margin:0px 10px;
+    border-radius:10px;
+    overflow:hidden;
+
+}
+
+
+.background-purple {
+    background: url(../img/fondo.png)    repeat fixed;
+    width:100%;
+    height:100%;
+    background-size:100%;
+    overflow:none;
+    position:relative;
+}
+
+
+.popupData {
+    position:absolute;
+    width:244px;
+    right:0px;
+    height:357px;
+    top:0px;
+    padding-left:10px;
+}
+
+.popupData h3 {
+    font-size:28px;
+
+}
+
+#buttonGo {
+    position:absolute;
+    left:70px;
+    bottom:40px;
+}
+
+
+
+.closse {
+    position:absolute;
+    float: right;
+    width: 30px;
+    right: 6px;
+    top: 7px;
+}
+
+
+.menu_in{
+    width: 17%;
+    background-size: 172px 150px;
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+    z-index: 999999;
+    max-width:133px;
+}
+
+.menu_in img{
+    bottom:0px;
+}
+
+.menu_blanco {
+    width: 0px;
+    height: 0px;
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+    z-index: 999999;
+}
+
+.menu_blanco img {
+    width:100%;
+    height:auto;
+    position:absolute;
+    bottom:0px;
+}
+
+
+
+.click {
+	position:absolute;
+	width: 50px;
+	height: 50px;
+	background:transparent;
+}
+
+.click-reader {
+	top: 102px;
+	left: 50px;
+}
+
+.click-listen {bottom: 10px;left: 46px;}
+
+.click-play {top: 54px;left: 98px;}
+
+.click-games {right: 9px;top: 46px;}
+
+/*------------------------------------*\
+    CONTENEDOR plus On
+\*------------------------------------*/
+
+
+.bar-window-ON{
+    width: 846px;
+    height: 62px;
+    position: absolute;
+     background: url(../img/BARRA.png);
+     background-size: 846px 62px;
+    bottom: -10px;
+    display: none;
+}
+
+
+.bar-window-ON .bar-window{
+    bottom: 40px;
+    color: #FFF;
+}
+
+.bar-window-ON .alouri-bar {
+    background: #F09098;
+    height: 6px;
+    margin: 2px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar-window-ON .bar-percent{
+    background: #FFF;
+}
+
+.bar-window-ON  .button-bar{
+    position: absolute;
+    right: 60px;
+    top: 11px;
+    z-index: 999;
+}
+
+.bar-window-ON .temperatura{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    color: #FFF;
+    left: 13px;
+    font-size: 29px;
+    top: 12px;
+}
+
+.bar-window-ON .minutos{
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    color: #FFF;
+    right: -28px;
+    font-size: 29px;
+    top: 12px;
+}
+
+.bar-window-ON .texto{
+    width: 80%;
+    height: auto;
+    position: absolute;
+    color: #FFF;
+    left: 10%;
+    font-size: 12px;
+    top: 22px;
+}
+
+.bar-window-ON .minutos > span{
+    font-size: 15px;
+}
+
+
+
+
+
+
